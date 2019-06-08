@@ -1,0 +1,4 @@
+*.log
+*/db.sqlite3
+.idea
+*/superlists/__pycache__
