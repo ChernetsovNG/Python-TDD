@@ -4,10 +4,13 @@ from lists.models import Item
 
 def home_page(request):
     '''домашная страница'''
-    if request.method == 'POST':
-        Item.objects.create(text=request.POST['item_text'])
-        return redirect('/lists/one-unique-list-in-the-world/')
     return render(request, 'home.html')
+
+
+def new_list(request):
+    '''новый список'''
+    Item.objects.create(text=request.POST['item_text'])
+    return redirect('/lists/one-unique-list-in-the-world/')
 
 
 def view_list(request):
